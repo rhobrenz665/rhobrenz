@@ -1,0 +1,208 @@
+main {
+  padding: 4rem;
+  min-height: calc(100vh - 3vh);
+  line-height: 1.5;
+
+  @include respond(tab-port) {
+    align-items: center;
+    text-align: center;
+
+    .lg-heading {
+      line-height: 1.3;
+      margin-bottom: 1rem;
+     }
+  }
+
+  @include respond(tab-land) {
+    align-items: center;
+    text-align: center;
+
+    .lg-heading {
+      line-height: 1.3;
+      margin-bottom: 1rem;
+     }
+  }
+
+  .icons {
+    margin-top: 1rem;
+    font-size: 2rem;
+    animation: moveInBottom 1s ease-out;
+
+    @include respond(tab-land) {
+      margin-top: 1.5rem;
+      font-size: 1.8rem;
+    }
+    a {
+      padding: 0.5rem;
+
+      &:hover {
+        color: $secondary-color;
+        @include easeOut();
+      }
+    }
+  }
+
+  &#home {
+      overflow: hidden;
+      padding: 8rem;
+
+        h1 {
+            margin-top: 12vh;
+            font-size: 10rem;
+            animation-name: moveInLeft;
+            animation-duration: 1s;
+            animation-timing-function: ease-out;
+
+            @include respond(tab-port) {
+                font-size: 9rem;    
+            }
+        }
+        h2 {
+            font-size: 1.8em;
+            animation: moveInRight 1s ease-out;
+        }
+
+        @include respond(phone) {
+          padding: 2rem;
+          padding-top: 10rem; 
+        } 
+  }
+} 
+
+.about-info {
+  display: grid;
+  grid-gap: 3rem;
+  grid-template-areas:
+  'bioimage bio bio'
+  'job1 job2 job3';
+  grid-template-columns: repeat(3, 1fr); 
+
+  @include respond(tab-port){
+      grid-template-areas:
+        'bioimage'
+        'bio'
+        'job1'
+        'job2'
+        'job3';
+      grid-template-columns: 1fr;
+  }
+
+  .bio-img {
+      grid-area: bioimage;
+      margin: auto;
+      border-radius: 50%;
+      border: $secondary-color 3px solid;
+      height: 250px;
+      width: 250px;
+  }
+  
+  .bio {
+      grid-area: bio;
+      font-size: 2rem;
+      letter-spacing: 5.5px;
+      margin-bottom: 5rem; 
+  }
+  
+  .job-1 {
+      grid-area: job1;
+      
+      #chart1 {
+        height: 22rem;
+        width: 100%;
+      }
+  }
+  
+  .job-2 {
+      grid-area: job2;
+
+      #chart2 {
+        height: 22rem;
+        width: 100%;
+      }
+  }
+  
+  .job-3 {
+      grid-area: job3;
+
+      #chart3 {
+        height: 22rem;
+        width: 100%;
+      }
+  }
+  
+  .job {
+      background: lighten($primary-color, 5);
+      padding: 0.5rem;
+      border-bottom: $secondary-color 5px solid;
+  }
+}
+
+//Work/Projects
+.projects {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 0.7rem;
+
+    @include respond(big-desktop) {
+      grid-template-columns: repeat(5, 1fr);
+    }
+
+    @include respond(tab-land) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include respond(tab-port) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include respond(phone) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+    img {
+        width: 100%;
+        border: 3px #fff solid;
+        height: 200px;
+
+        &:hover {
+            opacity: 0.5;
+            border-color: $secondary-color;
+            @include easeOut;
+        }
+    }
+
+    a {
+      text-align: center;
+      font-size:1.5rem;
+      font-weight: 500;
+    }
+}
+
+#contact{
+    min-height: 90vh;
+    
+    .boxes {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        align-items: center;
+        margin-top: 1rem;
+      
+        div {
+          font-size: 2rem;
+          border: 3px #fff solid;
+          padding: 1.5rem 2.5rem;
+          margin-bottom: 3rem;
+          @include easeOut;
+      
+          &:hover {
+            padding: 0.5rem 1.5rem;
+            background: $secondary-color;
+            color: set-text-color($secondary-color);
+            span {
+              color: set-text-color($secondary-color);
+            }
+          }
+        }
+      }
+}
