@@ -34,80 +34,81 @@ function toggleMenu() {
 
 
 // Js chart
-window.onload = function () {
-  const chart1 = new CanvasJS.Chart("chart1", {
-    backgroundColor: "transparent  ",
-    theme: "dark1", // "light2", "dark1", "dark2"
-    animationEnabled: true, // change to true		
-    title:{
-      text: "Skill Set"
-    },
-    data: [
-    {
-      // Change type to "bar", "area", "spline", "pie",etc.
-      type: "bar",
-      indexLabelFontSize: 20,
-      dataPoints: [
-        { label: "javascript",  y: 85  },
-        { label: "html", y: 85  },
-        { label: "css", y: 85  },
-        { label: "php",  y: 70  }
-      ]
-    }
-    ]
-  });
-  chart1.render();
+//window.onload = function () {
+  // const chart1 = new CanvasJS.Chart("chart1", {
+  //   backgroundColor: "transparent  ",
+  //   theme: "dark1", // "light2", "dark1", "dark2"
+  //   animationEnabled: true, // change to true		
+  //   title:{
+  //     text: "Skill Set",
+  //     fontSize: 20,
+  //     fontColor: "white"
+  //   },
+  //   data: [
+  //   {
+  //     // Change type to "bar", "area", "spline", "pie",etc.
+  //     type: "bar",
+  //     dataPoints: [
+  //       { label: "javascript",  y: 85 },
+  //       { label: "html", y: 85  },
+  //       { label: "css", y: 85  },
+  //       { label: "php",  y: 70  }
+  //     ]
+  //   }
+  //   ]
+  // });
+  // chart1.render();
   
 
-  const chart2 = new CanvasJS.Chart("chart2", {
-    backgroundColor: "transparent",
-    theme: "dark1", // "light1", "light2", "dark1", "dark2"
-    exportEnabled: true,
-    animationEnabled: true,
-    title: {
-      text: "Javascript Skills"
-    },
-    data: [{
-      type: "pie",
-      startAngle: 25,
-      toolTipContent: "<b>{label}</b>: {y}%",
-      showInLegend: "true",
-      legendText: "{label}",
-      indexLabelFontSize: 10,
-      indexLabel: "{label} - {y}%",
-      opacity: 0.5,
-      dataPoints: [
-        { y: 79.08, label: "React" },
-        { y: 77.34, label: "Redux" },
-        { y: 84.62, label: "Nodejs" },
-        { y: 85.00, label: "Vanilla Javascript" }
-      ]
-    }]
-  });
-  chart2.render();
+  // const chart2 = new CanvasJS.Chart("chart2", {
+  //    backgroundColor: "transparent",
+  //   theme: "light2", // "light2", "dark1", "dark2"
+  //   animationEnabled: true, // change to true		
+  //   title:{
+  //     text: "Javascript Skills",
+  //     fontSize: 15,
+  //     fontColor: "white"
+  //   },
+  //   data: [
+  //   {
+  //     // Change type to "bar", "area", "spline", "pie",etc.
+  //     type: "bar",
+  //     indexLabelFontSize: 20,
+  //     dataPoints: [
+  //       { label: "NodeJS",  y: 80},
+  //       { label: "React JS", y: 70  },
+  //       { label: "Redux JS", y: 65 },
+  //       { label: "Vannila Javascript",  y: 83  }
+  //     ]
+  //   }
+  //   ]
+  // });
+  // chart2.render();
 
 
-  const chart3 = new CanvasJS.Chart("chart3", {
-    backgroundColor: "transparent",
-    theme: "dark1", // "light2", "dark1", "dark2"
-    animationEnabled: true, // change to true		
-    title:{
-      text: "Css Skills"
-    },
-    data: [
-    {
-      // Change type to "bar", "area", "spline", "pie",etc.
-      type: "column",
-      indexLabelFontSize: 20,
-      dataPoints: [
-        { label: "Bootstrap",  y: 80  },
-        { label: "Materialize Css", y: 80  },
-        { label: "Skeleton css", y: 75 },
-        { label: "Sass",  y: 80  }
-      ]
-    }
-    ]
-  });
-  chart3.render();
-  }
+  // const chart3 = new CanvasJS.Chart("chart3", {
+  //   backgroundColor: "transparent",
+  //   theme: "dark1", // "light2", "dark1", "dark2"
+  //   animationEnabled: true, // change to true		
+  //   title:{
+  //     text: "Css Skills",
+  //     fontSize: 15,
+  //     fontColor: "white"
+  //   },
+  //   data: [
+  //   {
+  //     // Change type to "bar", "area", "spline", "pie",etc.
+  //     type: "column",
+  //     indexLabelFontSize: 20,
+  //     dataPoints: [
+  //       { label: "Bootstrap",  y: 75  },
+  //       { label: "Materialize Css", y: 70  },
+  //       { label: "Skeleton css", y: 65 },
+  //       { label: "Sass",  y: 78  }
+  //     ]
+  //   }
+  //   ]
+  // });
+  // chart3.render();
+  // }
 

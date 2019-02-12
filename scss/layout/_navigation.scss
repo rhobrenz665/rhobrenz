@@ -53,7 +53,7 @@
   opacity: 0.95;
   visibility: hidden;
 
-  &.show {
+  &.show {  
       visibility: visible;
   }
 
@@ -64,7 +64,7 @@
       align-items:center;
       justify-content: center;
       float: left;
-      width: 50%;
+      // width: 50%;
       height: 100vh;
       overflow: hidden;
   }
@@ -72,7 +72,11 @@
   &-nav {
       margin: 0;
       padding: 0;
-      background: darken($primary-color, 5);
+      // background: darken($primary-color, 5);
+      background: #2193b0;
+      background: -webkit-linear-gradient(to right, $primary-color, $primary-color-light);  
+      background: linear-gradient(to right, $primary-color, $primary-color-light); 
+      width:60%;
       list-style: none;
       transform: translate3d(0, -100%, 0);
       @include easeOut;
@@ -85,8 +89,18 @@
 
   //Branding Side
   &-branding {
-    //   background:#000;
-      background: $secondary-color;
+     
+    width:40%;
+      /* Note the RADIAL */
+      background: repeating-radial-gradient(
+        circle,
+        $primary-color,
+        $primary-color 10px,
+        darken($primary-color, 10%) 10px, 
+        darken($primary-color, 10%) 20px
+       );
+
+
       transform: translate3d(0, 100%, 0);
       @include easeOut;
 
@@ -99,9 +113,10 @@
           width: 250px;
           height: 250px;
           background: url('../img/portrait.jpg');
-        //   filter: grayscale(50%);
+        // filter: grayscale(50%);
           border-radius: 50%;
           border: solid 3px $secondary-color;
+          
       }
   }
 

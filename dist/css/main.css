@@ -1,3 +1,90 @@
+.chart {
+  width: 90%;
+  margin: 0 auto; }
+  .chart h1 {
+    text-align: center;
+    margin-bottom: 1rem; }
+
+@keyframes load {
+  from {
+    width: 0%; } }
+
+.bar {
+  background-color: #EEE;
+  padding: 2px;
+  border-radius: 15px;
+  margin-bottom: 5px;
+  font-size: 14px;
+  color: #FFF;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5); }
+
+.bar::before {
+  content: attr(data-skill);
+  background-color: #f3b0ff;
+  display: inline-block;
+  padding: 5px 0 5px 10px;
+  border-radius: inherit;
+  animation: load 2s 0s; }
+
+.bar::after {
+  content: attr(data-percent);
+  color: gray;
+  font-size: xx-small;
+  padding: 2px;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5); }
+
+.bar.front::before {
+  background-color: #ffcc33; }
+
+.bar.back::before {
+  background-color: #a6cfe3; }
+
+.bar.html::before {
+  width: calc(85% - 10px); }
+
+.bar.css::before {
+  width: calc(84% - 10px);
+  background: MediumSpringGreen; }
+
+.bar.js::before {
+  width: calc(83% - 10px); }
+
+.bar.php::before {
+  width: calc(60% - 10px); }
+
+.bar.Node::before {
+  width: calc(80% - 10px);
+  background-color: RoyalBlue; }
+
+.bar.react::before {
+  width: calc(75% - 10px);
+  background-color: Salmon; }
+
+.bar.redux::before {
+  width: calc(70% - 10px);
+  background-color: SeaGreen; }
+
+.bar.VS::before {
+  width: calc(80% - 10px);
+  background-color: SteelBlue; }
+
+.bar.BS::before {
+  width: calc(75% - 10px);
+  background-color: Thistle; }
+
+.bar.MC::before {
+  width: calc(74% - 10px);
+  background-color: blueviolet; }
+
+.bar.SC::before {
+  width: calc(70% - 10px);
+  background-color: deeppink; }
+
+.bar.SASS::before {
+  width: calc(79% - 10px);
+  background-color: LightSlateGray; }
+
 /*
 0 - 600px:      Phone
 600 - 900px:    Tablet portrait
@@ -90,7 +177,7 @@ body {
       clip-path: polygon(50% 0%, 100% 0, 100% 95%, 85% 100%, 0 100%, 0 0); } }
 
 body {
-  font-family: "Lato", sans-serif;
+  font-family: 'Gloria Hallelujah', cursive;
   font-weight: 200;
   /*font-size: 16px;*/
   line-height: 1.5;
@@ -114,10 +201,14 @@ h3 {
 
 a {
   color: #fff;
-  text-decoration: none; }
+  text-decoration: none;
+  font-family: 'Gloria Hallelujah', cursive; }
 
 .text-secondary {
   color: #95D321; }
+
+.bio p {
+  text-transform: uppercase; }
 
 .u-center-text {
   text-align: center !important; }
@@ -159,7 +250,7 @@ a {
   padding: 1rem;
   background: #006195;
   color: set-text-color(#0082c8);
-  height: 60px; }
+  height: 40px; }
 
 header {
   position: fixed;
@@ -208,20 +299,24 @@ header {
     align-items: center;
     justify-content: center;
     float: left;
-    width: 50%;
     height: 100vh;
     overflow: hidden; }
   .menu-nav {
     margin: 0;
     padding: 0;
-    background: #0071af;
+    background: #2193b0;
+    background: -webkit-linear-gradient(to right, #0082c8, #2C409E);
+    background: linear-gradient(to right, #0082c8, #2C409E);
+    width: 60%;
     list-style: none;
     transform: translate3d(0, -100%, 0);
     transition: all 0.5s ease-out; }
     .menu-nav.show {
       transform: translate3d(0, 0, 0); }
   .menu-branding {
-    background: #95D321;
+    width: 40%;
+    /* Note the RADIAL */
+    background: repeating-radial-gradient(circle, #0082c8, #0082c8 10px, #006195 10px, #006195 20px);
     transform: translate3d(0, 100%, 0);
     transition: all 0.5s ease-out; }
     .menu-branding.show {
@@ -314,8 +409,8 @@ main {
         margin-bottom: 1rem; } }
   main .icons {
     margin-top: 1rem;
-    font-size: 2rem;
-    animation: moveInBottom 1s ease-out; }
+    font-size: 1.8rem;
+    animation: moveInBottom 1.5s ease-out; }
     @media only screen and (max-width: 75em) {
       main .icons {
         margin-top: 1.5rem;
@@ -329,17 +424,17 @@ main {
     overflow: hidden;
     padding: 8rem; }
     main#home h1 {
-      margin-top: 12vh;
+      margin-top: 11vh;
       font-size: 10rem;
       animation-name: moveInLeft;
-      animation-duration: 1s;
+      animation-duration: 1.5s;
       animation-timing-function: ease-out; }
       @media only screen and (max-width: 56.25em) {
         main#home h1 {
-          font-size: 9rem; } }
+          font-size: 8rem; } }
     main#home h2 {
       font-size: 1.8em;
-      animation: moveInRight 1s ease-out; }
+      animation: moveInRight 1.5s ease-out; }
     @media only screen and (max-width: 37.5em) {
       main#home {
         padding: 2rem;
@@ -347,7 +442,7 @@ main {
 
 .about-info {
   display: grid;
-  grid-gap: 3rem;
+  grid-gap: 2rem;
   grid-template-areas: 'bioimage bio bio' 'job1 job2 job3';
   grid-template-columns: repeat(3, 1fr); }
   @media only screen and (max-width: 56.25em) {
@@ -358,33 +453,34 @@ main {
     grid-area: bioimage;
     margin: auto;
     border-radius: 50%;
-    border: #95D321 3px solid;
-    height: 250px;
-    width: 250px; }
+    border: #95D321 5px solid;
+    height: 260px;
+    width: 260px; }
   .about-info .bio {
     grid-area: bio;
-    font-size: 2rem;
+    font-size: 1.5rem;
     letter-spacing: 5.5px;
-    margin-bottom: 5rem; }
+    margin-bottom: 1rem;
+    padding: 1.2rem;
+    background-color: rgba(25, 47, 149, 0.1); }
   .about-info .job-1 {
     grid-area: job1; }
-    .about-info .job-1 #chart1 {
-      height: 22rem;
-      width: 100%; }
   .about-info .job-2 {
     grid-area: job2; }
-    .about-info .job-2 #chart2 {
-      height: 22rem;
-      width: 100%; }
   .about-info .job-3 {
     grid-area: job3; }
-    .about-info .job-3 #chart3 {
-      height: 22rem;
-      width: 100%; }
   .about-info .job {
     background: #0093e2;
-    padding: 0.5rem;
+    padding: 0.2rem;
     border-bottom: #95D321 5px solid; }
+    @media only screen and (max-width: 56.25em) {
+      .about-info .job {
+        align-items: left;
+        text-align: left; } }
+    @media only screen and (max-width: 75em) {
+      .about-info .job {
+        align-items: left;
+        text-align: left; } }
 
 .projects {
   display: grid;
@@ -424,6 +520,7 @@ main {
     align-items: center;
     margin-top: 1rem; }
     #contact .boxes div {
+      font-family: Arial, Helvetica, sans-serif;
       font-size: 2rem;
       border: 3px #fff solid;
       padding: 1.5rem 2.5rem;

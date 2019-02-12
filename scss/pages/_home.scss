@@ -25,8 +25,8 @@ main {
 
   .icons {
     margin-top: 1rem;
-    font-size: 2rem;
-    animation: moveInBottom 1s ease-out;
+    font-size: 1.8rem;
+    animation: moveInBottom 1.5s ease-out;
 
     @include respond(tab-land) {
       margin-top: 1.5rem;
@@ -47,31 +47,31 @@ main {
       padding: 8rem;
 
         h1 {
-            margin-top: 12vh;
+            margin-top: 11vh;
             font-size: 10rem;
             animation-name: moveInLeft;
-            animation-duration: 1s;
+            animation-duration: 1.5s;
             animation-timing-function: ease-out;
 
             @include respond(tab-port) {
-                font-size: 9rem;    
+                font-size: 8rem;    
             }
         }
         h2 {
             font-size: 1.8em;
-            animation: moveInRight 1s ease-out;
+            animation: moveInRight 1.5s ease-out;
         }
 
         @include respond(phone) {
           padding: 2rem;
           padding-top: 10rem; 
         } 
-  }
+  } 
 } 
 
 .about-info {
   display: grid;
-  grid-gap: 3rem;
+  grid-gap: 2rem;
   grid-template-areas:
   'bioimage bio bio'
   'job1 job2 job3';
@@ -91,49 +91,59 @@ main {
       grid-area: bioimage;
       margin: auto;
       border-radius: 50%;
-      border: $secondary-color 3px solid;
-      height: 250px;
-      width: 250px;
+      border: $secondary-color 5px solid;
+      height: 260px;
+      width: 260px;
   }
   
   .bio {
       grid-area: bio;
-      font-size: 2rem;
+      font-size: 1.5rem;
       letter-spacing: 5.5px;
-      margin-bottom: 5rem; 
+      margin-bottom: 1rem;
+      padding: 1.2rem;
+      background-color: rgba($primary-color-dark, 0.1);
   }
   
   .job-1 {
       grid-area: job1;
-      
-      #chart1 {
-        height: 22rem;
-        width: 100%;
-      }
   }
   
   .job-2 {
       grid-area: job2;
 
-      #chart2 {
-        height: 22rem;
-        width: 100%;
-      }
+      // #chart2 {
+      //   height: 22rem;
+      //   width: 100%;
+      // }
   }
   
   .job-3 {
       grid-area: job3;
 
-      #chart3 {
-        height: 22rem;
-        width: 100%;
-      }
+      // #chart3 {
+      //   height: 22rem;
+      //   width: 100%;
+      // }
   }
-  
+
   .job {
       background: lighten($primary-color, 5);
-      padding: 0.5rem;
+      padding: 0.2rem;
       border-bottom: $secondary-color 5px solid;
+
+      @include respond(tab-port){
+        align-items: left;
+        text-align: left;
+      }
+      @include respond(tab-land){
+        align-items: left;
+        text-align: left;
+      }
+      @include respond(mobile){
+        align-items: left;
+        text-align: left;
+      }
   }
 }
 
@@ -189,6 +199,7 @@ main {
         margin-top: 1rem;
       
         div {
+          font-family: Arial, Helvetica, sans-serif;
           font-size: 2rem;
           border: 3px #fff solid;
           padding: 1.5rem 2.5rem;
