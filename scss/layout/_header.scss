@@ -3,3 +3,34 @@ header {
   z-index: 2;
   width: 100%;
 }
+
+.icons {
+  position: absolute;
+  left: 1.2%;
+  top: 2%;
+  z-index: -1;
+  margin-top: 1rem;
+  font-size: .7rem;
+  animation: moveInBottom 1.5s ease-out;
+
+  & a {
+    padding: 0.1rem;
+  }
+  & i{
+    border: 1.2px solid white;
+    border-radius: 50px;
+    padding:5px;
+  }
+
+  @include respond(tab-land) {
+    margin-top: 1.5rem;
+  }
+}
+
+.icons a, i {
+  &:hover {
+    color: $secondary-color;
+    border-color: $secondary-color;
+    @include easeOut();
+  }
+}

@@ -21,3 +21,58 @@
   background: lighten($primary-color, 50);
   color: #333;
 }
+
+.btn-main {
+  &,
+  &:link,
+  &:visited {
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 1.5rem 4rem;
+      display: inline-block;
+      border-radius: 10rem;
+      transition: all .2s;
+      position: relative;
+      font-size: $default-font-size;
+      animation: moveInBottom 1.5s ease-out;
+
+      //Change for the <button> element
+      border: none;
+      cursor: pointer;
+  }
+  
+  &:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 1rem 2rem rgba(black,.2);
+
+      &::after {
+          transform: scaleX(1.4) scaleY(1.6);
+          opacity: 0;
+      }
+  }
+  
+  &:active,
+  &:focus {
+      outline: none;
+      transform: translateY(-1px);
+      box-shadow: 0 .5rem 1rem rgba(black,.2);
+  }
+}
+
+input#submit-btn {
+  margin-top: 20px;
+  width: 100px;
+  border: 2px solid #FFF !important;
+  border-radius: 50px;
+  margin-bottom:5rem;
+
+  transition: 0.25s ease-in-out 0s;
+
+  &:hover {
+    cursor: pointer;
+    background: #FFF;
+    color: #000;
+    /* scale */ 
+    transform: scale(1.25);
+ }
+}

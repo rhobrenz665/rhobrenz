@@ -2,6 +2,8 @@ main {
   padding: 4rem;
   min-height: calc(100vh - 3vh);
   line-height: 1.5;
+  align-items: center;
+  text-align: center;
 
   @include respond(tab-port) {
     align-items: center;
@@ -23,49 +25,36 @@ main {
      }
   }
 
-  .icons {
-    margin-top: 1rem;
-    font-size: 1.8rem;
-    animation: moveInBottom 1.5s ease-out;
-
-    @include respond(tab-land) {
-      margin-top: 1.5rem;
-      font-size: 1.8rem;
-    }
-    a {
-      padding: 0.5rem;
-
-      &:hover {
-        color: $secondary-color;
-        @include easeOut();
-      }
-    }
-  }
-
   &#home {
-      overflow: hidden;
-      padding: 8rem;
-
+      display: flex;           /* establish flex container */
+      flex-direction: column;  /* make main axis vertical */
+      justify-content: center; /* center items vertically, in this case */
+      align-content: center;     /* center items horizontally, in this case */
+      // height: 100vh;
+      // overflow: hidden;
         h1 {
-            margin-top: 11vh;
-            font-size: 10rem;
+            font-size: 10.5rem;
             animation-name: moveInLeft;
             animation-duration: 1.5s;
             animation-timing-function: ease-out;
 
             @include respond(tab-port) {
-                font-size: 8rem;    
+              font-size: 8rem;    
+            }
+
+           @include respond(tab-land) {
+            font-size: 7.5rem;    
+            }
+
+            @include respond(phone) {
+              font-size: 7rem;    
             }
         }
         h2 {
             font-size: 1.8em;
             animation: moveInRight 1.5s ease-out;
+            margin-bottom: 3rem;
         }
-
-        @include respond(phone) {
-          padding: 2rem;
-          padding-top: 10rem; 
-        } 
   } 
 } 
 
@@ -131,19 +120,8 @@ main {
       background: lighten($primary-color, 5);
       padding: 0.2rem;
       border-bottom: $secondary-color 5px solid;
-
-      @include respond(tab-port){
-        align-items: left;
-        text-align: left;
-      }
-      @include respond(tab-land){
-        align-items: left;
-        text-align: left;
-      }
-      @include respond(mobile){
-        align-items: left;
-        text-align: left;
-      }
+      align-items: left;
+      text-align: left;
   }
 }
 
@@ -151,7 +129,7 @@ main {
 .projects {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-gap: 0.7rem;
+    grid-gap: 0.4rem;
 
     @include respond(big-desktop) {
       grid-template-columns: repeat(5, 1fr);
@@ -188,32 +166,120 @@ main {
     }
 }
 
-#contact{
-    min-height: 90vh;
-    
-    .boxes {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-evenly;
-        align-items: center;
-        margin-top: 1rem;
-      
-        div {
-          font-family: Arial, Helvetica, sans-serif;
-          font-size: 2rem;
-          border: 3px #fff solid;
-          padding: 1.5rem 2.5rem;
-          margin-bottom: 3rem;
-          @include easeOut;
-      
-          &:hover {
-            padding: 0.5rem 1.5rem;
-            background: $secondary-color;
-            color: set-text-color($secondary-color);
-            span {
-              color: set-text-color($secondary-color);
-            }
-          }
-        }
+.contact{
+  padding: 0 !important;
+
+  &-head {
+    padding: 4rem;
+    line-height: 1.5;
+  }
+
+  &-content {
+    width: 100%;
+    .form-box {
+      background: transparent;
+    }
+  }
+
+   form {
+    max-width: 960px;
+    margin: 0 auto;
+   }
+
+    form input,
+    textarea,
+    select,
+    option {
+      padding: 1rem;
+      border: none;
+      background: transparent;
+      border-bottom: 2px solid #FFF;
+      color: #FFF;
+      outline: 0;
+    }
+
+    input#name, input#email, textarea#message{
+      width: 100%;
+      margin-top: 20px;
+
+      &::placeholder{
+        color: #FFF;
+        opacity: 1;
       }
+    }
+     
+   
+
+  @include respond(tab-port) {
+      form{
+         width:80%;
+      }
+      input#firstname{
+         margin: 0 !important;
+         max-width: 100% !important;
+      }
+   }
+
+   @include respond(phone) {
+    form{
+       width: 78%;
+    }
+    input#firstname{
+       margin: 0 !important;
+       max-width: 100% !important;
+    }
+ }
+
+
+    &-info {
+      background: darken($primary-color, 10);
+      display: grid;
+      justify-content: center;
+      align-items: center;
+      grid-template-columns: repeat(3, 1fr);     
+
+     h2 {
+        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+     } 
+
+     &-d {
+       display: grid;
+       padding: 4rem;
+       grid-gap: 1rem;
+       width: 80%;
+       margin: auto;
+
+       @include respond(tab-land) {
+        grid-gap: .5rem;
+        padding: 2.8rem;
+       }
+
+       @include respond(phone) {
+        border-bottom: rgba(#333, 0.1) solid 1px;
+        padding: 1.2rem 1rem;
+       }
+   
+     }
+
+     @include respond(phone) {
+      grid-template-columns: 1fr;
+    
+     }
+     
+    }
+
+    &-projects {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-content: center;  
+      text-align: center;
+      background: $secondary-color;
+
+      padding: 8rem;
+    }
+
+    &-h1 {
+      font-size: 4rem;
+    }
 }

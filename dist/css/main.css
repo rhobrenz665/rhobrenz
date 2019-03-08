@@ -22,6 +22,7 @@
 .bar::before {
   content: attr(data-skill);
   background-color: #f3b0ff;
+  background-color: #006195;
   display: inline-block;
   padding: 5px 0 5px 10px;
   border-radius: inherit;
@@ -34,18 +35,11 @@
   padding: 2px;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5); }
 
-.bar.front::before {
-  background-color: #ffcc33; }
-
-.bar.back::before {
-  background-color: #a6cfe3; }
-
 .bar.html::before {
   width: calc(85% - 10px); }
 
 .bar.css::before {
-  width: calc(84% - 10px);
-  background: MediumSpringGreen; }
+  width: calc(84% - 10px); }
 
 .bar.js::before {
   width: calc(83% - 10px); }
@@ -54,36 +48,28 @@
   width: calc(60% - 10px); }
 
 .bar.Node::before {
-  width: calc(80% - 10px);
-  background-color: RoyalBlue; }
+  width: calc(80% - 10px); }
 
 .bar.react::before {
-  width: calc(75% - 10px);
-  background-color: Salmon; }
+  width: calc(75% - 10px); }
 
 .bar.redux::before {
-  width: calc(70% - 10px);
-  background-color: SeaGreen; }
+  width: calc(70% - 10px); }
 
 .bar.VS::before {
-  width: calc(80% - 10px);
-  background-color: SteelBlue; }
+  width: calc(80% - 10px); }
 
 .bar.BS::before {
-  width: calc(75% - 10px);
-  background-color: Thistle; }
+  width: calc(75% - 10px); }
 
 .bar.MC::before {
-  width: calc(74% - 10px);
-  background-color: blueviolet; }
+  width: calc(74% - 10px); }
 
 .bar.SC::before {
-  width: calc(70% - 10px);
-  background-color: deeppink; }
+  width: calc(70% - 10px); }
 
 .bar.SASS::before {
-  width: calc(79% - 10px);
-  background-color: LightSlateGray; }
+  width: calc(79% - 10px); }
 
 /*
 0 - 600px:      Phone
@@ -245,17 +231,108 @@ a {
   background: #c8ecff;
   color: #333; }
 
+.btn-main, .btn-main:link, .btn-main:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 1.5rem 4rem;
+  display: inline-block;
+  border-radius: 10rem;
+  transition: all .2s;
+  position: relative;
+  font-size: 1.6rem;
+  animation: moveInBottom 1.5s ease-out;
+  border: none;
+  cursor: pointer; }
+
+.btn-main:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
+  .btn-main:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0; }
+
+.btn-main:active, .btn-main:focus {
+  outline: none;
+  transform: translateY(-1px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
+
+input#submit-btn {
+  margin-top: 20px;
+  width: 100px;
+  border: 2px solid #FFF !important;
+  border-radius: 50px;
+  margin-bottom: 5rem;
+  transition: 0.25s ease-in-out 0s; }
+  input#submit-btn:hover {
+    cursor: pointer;
+    background: #FFF;
+    color: #000;
+    /* scale */
+    transform: scale(1.25); }
+
 #main-footer {
-  text-align: center;
   padding: 1rem;
   background: #006195;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  grid-row-gap: 1rem; }
+  @media only screen and (max-width: 37.5em) {
+    #main-footer {
+      grid-template-columns: 1fr; } }
+
+.copy {
   color: set-text-color(#0082c8);
-  height: 40px; }
+  font-size: 1.4rem; }
+  @media only screen and (max-width: 37.5em) {
+    .copy {
+      font-size: 1rem; } }
+
+.icon-footer {
+  font-size: 1rem;
+  animation: moveInBottom 1.5s ease-out; }
+  @media only screen and (max-width: 37.5em) {
+    .icon-footer {
+      font-size: .8rem; } }
+  .icon-footer i {
+    border: 1.5px solid white;
+    border-radius: 50px;
+    padding: 6px; }
+
+.icon-footer a:hover, i:hover {
+  border-color: #95D321;
+  color: #95D321;
+  transition: all 0.5s ease-out; }
 
 header {
   position: fixed;
   z-index: 2;
   width: 100%; }
+
+.icons {
+  position: absolute;
+  left: 1.2%;
+  top: 2%;
+  z-index: -1;
+  margin-top: 1rem;
+  font-size: .7rem;
+  animation: moveInBottom 1.5s ease-out; }
+  .icons a {
+    padding: 0.1rem; }
+  .icons i {
+    border: 1.2px solid white;
+    border-radius: 50px;
+    padding: 5px; }
+  @media only screen and (max-width: 75em) {
+    .icons {
+      margin-top: 1.5rem; } }
+
+.icons a:hover, i:hover {
+  color: #95D321;
+  border-color: #95D321;
+  transition: all 0.5s ease-out; }
 
 .menu-btn {
   position: absolute;
@@ -273,17 +350,11 @@ header {
   .menu-btn.close {
     transform: rotate(180deg); }
     .menu-btn.close .btn-line:nth-child(1) {
-      transform: rotate(46deg) translate(5px, 5px);
-      width: 14px;
-      height: 2.1px;
-      opacity: 0.8; }
+      transform: rotate(45deg) translate(5px, 5px); }
     .menu-btn.close .btn-line:nth-child(2) {
       opacity: 0; }
     .menu-btn.close .btn-line:nth-child(3) {
-      transform: rotate(-45deg) translate(6.1px, -5.5px);
-      width: 14px;
-      height: 2.1px;
-      opacity: 0.8; }
+      transform: rotate(-45deg) translate(7px, -6px); }
 
 .menu {
   position: fixed;
@@ -380,19 +451,12 @@ header {
       width: 150px;
       height: 150px; } }
 
-@media only screen and (max-width: 37.5em) {
-  main {
-    padding: 2rem; }
-    main #home h1 {
-      margin-top: 10vh; }
-    main .lg-heading {
-      margin-top: 1rem;
-      font-size: 5rem; } }
-
 main {
   padding: 4rem;
   min-height: calc(100vh - 3vh);
-  line-height: 1.5; }
+  line-height: 1.5;
+  align-items: center;
+  text-align: center; }
   @media only screen and (max-width: 56.25em) {
     main {
       align-items: center;
@@ -407,38 +471,33 @@ main {
       main .lg-heading {
         line-height: 1.3;
         margin-bottom: 1rem; } }
-  main .icons {
-    margin-top: 1rem;
-    font-size: 1.8rem;
-    animation: moveInBottom 1.5s ease-out; }
-    @media only screen and (max-width: 75em) {
-      main .icons {
-        margin-top: 1.5rem;
-        font-size: 1.8rem; } }
-    main .icons a {
-      padding: 0.5rem; }
-      main .icons a:hover {
-        color: #95D321;
-        transition: all 0.5s ease-out; }
   main#home {
-    overflow: hidden;
-    padding: 8rem; }
+    display: flex;
+    /* establish flex container */
+    flex-direction: column;
+    /* make main axis vertical */
+    justify-content: center;
+    /* center items vertically, in this case */
+    align-content: center;
+    /* center items horizontally, in this case */ }
     main#home h1 {
-      margin-top: 11vh;
-      font-size: 10rem;
+      font-size: 10.5rem;
       animation-name: moveInLeft;
       animation-duration: 1.5s;
       animation-timing-function: ease-out; }
       @media only screen and (max-width: 56.25em) {
         main#home h1 {
           font-size: 8rem; } }
+      @media only screen and (max-width: 75em) {
+        main#home h1 {
+          font-size: 7.5rem; } }
+      @media only screen and (max-width: 37.5em) {
+        main#home h1 {
+          font-size: 7rem; } }
     main#home h2 {
       font-size: 1.8em;
-      animation: moveInRight 1.5s ease-out; }
-    @media only screen and (max-width: 37.5em) {
-      main#home {
-        padding: 2rem;
-        padding-top: 10rem; } }
+      animation: moveInRight 1.5s ease-out;
+      margin-bottom: 3rem; }
 
 .about-info {
   display: grid;
@@ -472,20 +531,14 @@ main {
   .about-info .job {
     background: #0093e2;
     padding: 0.2rem;
-    border-bottom: #95D321 5px solid; }
-    @media only screen and (max-width: 56.25em) {
-      .about-info .job {
-        align-items: left;
-        text-align: left; } }
-    @media only screen and (max-width: 75em) {
-      .about-info .job {
-        align-items: left;
-        text-align: left; } }
+    border-bottom: #95D321 5px solid;
+    align-items: left;
+    text-align: left; }
 
 .projects {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-gap: 0.7rem; }
+  grid-gap: 0.4rem; }
   @media only screen and (min-width: 112.5em) {
     .projects {
       grid-template-columns: repeat(5, 1fr); } }
@@ -511,24 +564,78 @@ main {
     font-size: 1.5rem;
     font-weight: 500; }
 
-#contact {
-  min-height: 90vh; }
-  #contact .boxes {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
+.contact {
+  padding: 0 !important; }
+  .contact-head {
+    padding: 4rem;
+    line-height: 1.5; }
+  .contact-content {
+    width: 100%; }
+    .contact-content .form-box {
+      background: transparent; }
+  .contact form {
+    max-width: 960px;
+    margin: 0 auto; }
+  .contact form input,
+  .contact textarea,
+  .contact select,
+  .contact option {
+    padding: 1rem;
+    border: none;
+    background: transparent;
+    border-bottom: 2px solid #FFF;
+    color: #FFF;
+    outline: 0; }
+  .contact input#name, .contact input#email, .contact textarea#message {
+    width: 100%;
+    margin-top: 20px; }
+    .contact input#name::placeholder, .contact input#email::placeholder, .contact textarea#message::placeholder {
+      color: #FFF;
+      opacity: 1; }
+  @media only screen and (max-width: 56.25em) {
+    .contact form {
+      width: 80%; }
+    .contact input#firstname {
+      margin: 0 !important;
+      max-width: 100% !important; } }
+  @media only screen and (max-width: 37.5em) {
+    .contact form {
+      width: 78%; }
+    .contact input#firstname {
+      margin: 0 !important;
+      max-width: 100% !important; } }
+  .contact-info {
+    background: #006195;
+    display: grid;
+    justify-content: center;
     align-items: center;
-    margin-top: 1rem; }
-    #contact .boxes div {
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 2rem;
-      border: 3px #fff solid;
-      padding: 1.5rem 2.5rem;
-      margin-bottom: 3rem;
-      transition: all 0.5s ease-out; }
-      #contact .boxes div:hover {
-        padding: 0.5rem 1.5rem;
-        background: #95D321;
-        color: set-text-color(#95D321); }
-        #contact .boxes div:hover span {
-          color: set-text-color(#95D321); }
+    grid-template-columns: repeat(3, 1fr); }
+    .contact-info h2 {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+    .contact-info-d {
+      display: grid;
+      padding: 4rem;
+      grid-gap: 1rem;
+      width: 80%;
+      margin: auto; }
+      @media only screen and (max-width: 75em) {
+        .contact-info-d {
+          grid-gap: .5rem;
+          padding: 2.8rem; } }
+      @media only screen and (max-width: 37.5em) {
+        .contact-info-d {
+          border-bottom: rgba(51, 51, 51, 0.1) solid 1px;
+          padding: 1.2rem 1rem; } }
+    @media only screen and (max-width: 37.5em) {
+      .contact-info {
+        grid-template-columns: 1fr; } }
+  .contact-projects {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    background: #95D321;
+    padding: 8rem; }
+  .contact-h1 {
+    font-size: 4rem; }

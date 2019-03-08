@@ -26,6 +26,7 @@
  .bar::before{
    content:  attr(data-skill);
    background-color: #f3b0ff;
+   background-color: darken(#0082c8, 10);
    display: inline-block;
    padding: 5px 0 5px 10px;
    border-radius: inherit;
@@ -40,10 +41,10 @@
 }
  
  .bar.front::before{
-   background-color: #ffcc33;
+  //  background-color: #ffcc33;
  }
  .bar.back::before{
-   background-color: #a6cfe3;
+  //  background-color: #a6cfe3;
  }
  
 //  Skill
@@ -52,7 +53,7 @@
  }
  .bar.css::before{
    width: calc(84% - 10px);
-   background: MediumSpringGreen;
+  //  background: MediumSpringGreen;
  }
  .bar.js::before{
    width: calc(83% - 10px);
@@ -64,37 +65,37 @@
 //  Javascript
 .bar.Node::before{
   width: calc(80% - 10px);
-  background-color: RoyalBlue;
+  // background-color: RoyalBlue;
 }
 .bar.react::before{
   width: calc(75% - 10px);
-  background-color: Salmon ;
+  // background-color: Salmon ;
 }
 .bar.redux::before{
   width: calc(70% - 10px);
-  background-color: SeaGreen;
+  // background-color: SeaGreen;
 }
 .bar.VS::before{
   width: calc(80% - 10px);
-  background-color: SteelBlue;
+  // background-color: SteelBlue;
 }
 
 
 // CSS
 .bar.BS::before{
   width: calc(75% - 10px);
-  background-color: Thistle;
+  // background-color: Thistle;
 }
 .bar.MC::before{
   width: calc(74% - 10px);
-  background-color: blueviolet;
+  // background-color: blueviolet;
 }
 .bar.SC::before{
   width: calc(70% - 10px);
-  background-color: deeppink;
+  // background-color: deeppink;
 }
 .bar.SASS::before{
   width: calc(79% - 10px);
-  background-color: LightSlateGray;
+  // background-color: LightSlateGray;
 }
  
