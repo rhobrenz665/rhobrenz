@@ -1,3 +1,94 @@
+/*
+0 - 600px:      Phone
+600 - 900px:    Tablet portrait
+900 - 1200px:   Tablet landscape
+[1200 - 1800] is where our normal styles apply
+1800px + :      Big desktop
+
+$breakpoint arguement choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+
+ORDER: Base + typography > general layout + grid > page layout > components
+
+1em = 16px
+*/
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  font-size: 62.5%; }
+  @media only screen and (max-width: 75em) {
+    html {
+      font-size: 59.5%; } }
+  @media only screen and (max-width: 37.5em) {
+    html {
+      font-size: 42%; } }
+
+body {
+  box-sizing: border-box;
+  padding: 1rem; }
+
+::selection {
+  background-color: #0082c8; }
+
+#bg-img#bg-img {
+  height: 95vh;
+  background: #667db6;
+  background: -webkit-linear-gradient(to right, rgba(102, 125, 182, 0.9), rgba(0, 130, 200, 0.9), #0082c8, #667db6), url(../img/background.jpg);
+  background: linear-gradient(to right, rgba(102, 125, 182, 0.9), rgba(0, 130, 200, 0.9), #0082c8, #667db6), url(../img/background.jpg);
+  background-size: cover;
+  background-attachment: fixed; }
+  @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+    #bg-img#bg-img {
+      -webkit-clip-path: polygon(100% 0, 100% 93%, 80% 96%, 29% 96%, 0 100%, 0 0);
+      clip-path: polygon(100% 0, 100% 93%, 80% 96%, 29% 96%, 0 100%, 0 0); } }
+
+#bg-img-2#bg-img-2 {
+  background: #667db6;
+  background: -webkit-linear-gradient(to right, rgba(102, 125, 182, 0.9), rgba(0, 130, 200, 0.9), #0082c8, #667db6), url(../img/background-small.jpg);
+  background: linear-gradient(to right, rgba(102, 125, 182, 0.9), rgba(0, 130, 200, 0.9), #0082c8, #667db6), url(../img/background-small.jpg);
+  background-size: cover;
+  background-attachment: fixed; }
+  @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+    #bg-img-2#bg-img-2 {
+      -webkit-clip-path: polygon(50% 0%, 100% 0, 100% 95%, 85% 100%, 0 100%, 0 0);
+      clip-path: polygon(50% 0%, 100% 0, 100% 95%, 85% 100%, 0 100%, 0 0); } }
+
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem); }
+  80% {
+    transform: translateX(1rem); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem); }
+  80% {
+    transform: translateX(-1rem); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(3rem); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+
 .chart {
   width: 90%;
   margin: 0 auto; }
@@ -70,97 +161,6 @@
 
 .bar.SASS::before {
   width: calc(79% - 10px); }
-
-/*
-0 - 600px:      Phone
-600 - 900px:    Tablet portrait
-900 - 1200px:   Tablet landscape
-[1200 - 1800] is where our normal styles apply
-1800px + :      Big desktop
-
-$breakpoint arguement choices:
-- phone
-- tab-port
-- tab-land
-- big-desktop
-
-ORDER: Base + typography > general layout + grid > page layout > components
-
-1em = 16px
-*/
-@keyframes moveInLeft {
-  0% {
-    opacity: 0;
-    transform: translateX(-10rem); }
-  80% {
-    transform: translateX(1rem); }
-  100% {
-    opacity: 1;
-    transform: translate(0); } }
-
-@keyframes moveInRight {
-  0% {
-    opacity: 0;
-    transform: translateX(10rem); }
-  80% {
-    transform: translateX(-1rem); }
-  100% {
-    opacity: 1;
-    transform: translate(0); } }
-
-@keyframes moveInBottom {
-  0% {
-    opacity: 0;
-    transform: translateY(3rem); }
-  100% {
-    opacity: 1;
-    transform: translate(0); } }
-
-*,
-*::after,
-*::before {
-  margin: 0;
-  padding: 0;
-  box-sizing: inherit; }
-
-html {
-  font-size: 62.5%; }
-  @media only screen and (max-width: 75em) {
-    html {
-      font-size: 59.5%; } }
-  @media only screen and (max-width: 37.5em) {
-    html {
-      font-size: 42%; } }
-
-body {
-  box-sizing: border-box;
-  padding: 1rem; }
-
-::selection {
-  background-color: #0082c8; }
-
-#bg-img#bg-img {
-  height: 95vh;
-  background: #667db6;
-  background: -webkit-linear-gradient(to right, rgba(102, 125, 182, 0.9), rgba(0, 130, 200, 0.9), #0082c8, #667db6), url(../img/background.jpg);
-  background: linear-gradient(to right, rgba(102, 125, 182, 0.9), rgba(0, 130, 200, 0.9), #0082c8, #667db6), url(../img/background.jpg);
-  background-size: cover;
-  background-attachment: fixed; }
-  @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
-    #bg-img#bg-img {
-      -webkit-clip-path: polygon(100% 0, 100% 93%, 80% 96%, 29% 96%, 0 100%, 0 0);
-      clip-path: polygon(100% 0, 100% 93%, 80% 96%, 29% 96%, 0 100%, 0 0); } }
-
-#bg-img-2#bg-img-2 {
-  background: #667db6;
-  background: -webkit-linear-gradient(to right, rgba(102, 125, 182, 0.9), rgba(0, 130, 200, 0.9), #0082c8, #667db6), url(../img/background-small.jpg);
-  background: linear-gradient(to right, rgba(102, 125, 182, 0.9), rgba(0, 130, 200, 0.9), #0082c8, #667db6), url(../img/background-small.jpg);
-  background-size: cover;
-  background-attachment: fixed; }
-  @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
-    #bg-img-2#bg-img-2 {
-      -webkit-clip-path: polygon(50% 0%, 100% 0, 100% 95%, 85% 100%, 0 100%, 0 0);
-      clip-path: polygon(50% 0%, 100% 0, 100% 95%, 85% 100%, 0 100%, 0 0); } }
 
 body {
   font-family: 'Gloria Hallelujah', cursive;
