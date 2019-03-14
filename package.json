@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Resposive porfolio website",
   "main": "index.js",
-  "homepage": "https://rhobrenz665.github.io/buenavistarhobrenz",
+  "homepage": "https://rhobrenz665.github.io/rhobrenz",
   "scripts": {
     "sass": "node-sass -w scss/ -o dist/css/ --recursive",
     "deploy": "gh-pages -d dist"
