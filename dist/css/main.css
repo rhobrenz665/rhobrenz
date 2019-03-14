@@ -153,8 +153,8 @@ body {
 
 #bg-img-2#bg-img-2 {
   background: #667db6;
-  background: -webkit-linear-gradient(to right, rgba(102, 125, 182, 0.9), rgba(0, 130, 200, 0.9), #0082c8, #667db6), url(../img/background.jpg);
-  background: linear-gradient(to right, rgba(102, 125, 182, 0.9), rgba(0, 130, 200, 0.9), #0082c8, #667db6), url(../img/background.jpg);
+  background: -webkit-linear-gradient(to right, rgba(102, 125, 182, 0.9), rgba(0, 130, 200, 0.9), #0082c8, #667db6), url(../img/background-small.jpg);
+  background: linear-gradient(to right, rgba(102, 125, 182, 0.9), rgba(0, 130, 200, 0.9), #0082c8, #667db6), url(../img/background-small.jpg);
   background-size: cover;
   background-attachment: fixed; }
   @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {

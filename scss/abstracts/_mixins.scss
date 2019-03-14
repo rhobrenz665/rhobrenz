@@ -26,8 +26,8 @@
     &#bg-img-2 {
 
       background: #667db6;
-      background: -webkit-linear-gradient(to right, rgba(#667db6, 0.9), rgba(#0082c8, 0.9), #0082c8, #667db6), $home-image;
-      background: linear-gradient(to right, rgba(#667db6, 0.9), rgba(#0082c8, 0.9), #0082c8, #667db6), $home-image; 
+      background: -webkit-linear-gradient(to right, rgba(#667db6, 0.9), rgba(#0082c8, 0.9), #0082c8, #667db6), $home-image-small;
+      background: linear-gradient(to right, rgba(#667db6, 0.9), rgba(#0082c8, 0.9), #0082c8, #667db6), $home-image-small; 
 
       background-size: cover;
       background-attachment: fixed; 
